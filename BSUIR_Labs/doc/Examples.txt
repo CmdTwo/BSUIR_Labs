@@ -1,0 +1,35 @@
++++Polyno Example
+
+	Polyno* polyno_1 = new Polyno();
+
+	polyno_1->PushBack(7, 4);
+	polyno_1->PushBack(4, 2);
+	polyno_1->PushBack(-1, 1);
+	polyno_1->PushBack(2, 0);
+
+	std::cout << (*polyno_1);
+
+	Polyno* polyno_2 = new Polyno();
+
+	polyno_2->PushBack(7, 4);
+	polyno_2->PushBack(4, 2);
+	polyno_2->PushBack(-1, 1);
+	polyno_2->PushBack(2, 0);
+
+	std::cout << (*polyno_2);
+
+	std::cout << "\nIs equal: " << (polyno_1->IsEqual(*polyno_2) ? "True" : "False") << "\n";
+
+	Polyno* polyno_3 = new Polyno();
+
+	polyno_1->Add(*polyno_2, polyno_3);
+
+	std::cout << (*polyno_3);
+
+	polyno_2->Inverse();
+
+	Polyno* polyno_4 = new Polyno();
+
+	polyno_3->Add(*polyno_2, polyno_4);
+
+	std::cout << (*polyno_4);
