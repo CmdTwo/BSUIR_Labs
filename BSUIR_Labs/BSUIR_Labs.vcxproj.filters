@@ -35,5 +35,8 @@
     <ClInclude Include="DataStructLabs\Counting\Counting.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="DataStructLabs\SingleList\SingleList.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

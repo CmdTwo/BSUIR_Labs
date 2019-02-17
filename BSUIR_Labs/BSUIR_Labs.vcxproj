@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="DataStructLabs\Counting\Counting.h" />
     <ClInclude Include="DataStructLabs\Polyno\Polyno.h" />
+    <ClInclude Include="DataStructLabs\SingleList\SingleList.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="doc\Examples.txt" />
