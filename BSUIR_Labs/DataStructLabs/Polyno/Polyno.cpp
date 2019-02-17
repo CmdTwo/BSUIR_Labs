@@ -1,6 +1,5 @@
 #include "Polyno.h"
 #include <iostream>
-#include <stdexcept>
 
 std::ostream& operator<< (std::ostream &out, const Polyno::Item &item)
 {
@@ -147,4 +146,12 @@ Polyno::ConstIter Polyno::End() const
 
 Polyno::~Polyno()
 {
+	Iter iter = _begin;
+	Iter deleteIter;
+	while (iter != _end)
+	{
+		deleteIter = iter;
+		iter = iter->_next;
+		delete deleteIter;
+	}
 }

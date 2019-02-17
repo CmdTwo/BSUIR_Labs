@@ -1,4 +1,6 @@
+/////////
 +++Polyno Example
+/////////
 
 	Polyno* polyno_1 = new Polyno();
 
@@ -33,3 +35,46 @@
 	polyno_3->Add(*polyno_2, polyno_4);
 
 	std::cout << (*polyno_4);
+
+/////////
++++Counting Example
+/////////
+
+void Testing(const int &usersCount = 64, const int &every = 4)
+{
+	Counting* couting;
+
+	std::cout << "Users: 1-" << usersCount << " | Remove every: " << every << "\n";
+
+	for (int i = 0; i < usersCount; i++)
+	{
+		couting = new Counting();
+
+		for (int j = 0; j != i + 1; j++)
+			couting->PushBack("User_" + std::to_string(j + 1));
+
+		couting->RemoveEvery(every);
+
+		std::cout << "U: ";
+		std::cout.width(2);
+		std::cout << i + 1 << " | R: ";
+		std::cout.width(2); 
+		std::cout << couting->GetFirst()->_permanentIndex << "\n";
+
+		delete couting;
+	}
+}
+
+	Testing();
+	/*Counting* couting = new Counting();
+
+	for (int i = 0; i != 64; i++)
+	{
+		couting->PushBack("User_" + std::to_string(i));
+	}
+
+	std::cout << "Users list:\n\n" << *couting;
+
+	couting->RemoveEvery(4);
+
+	std::cout << "\nReslut:\n" << *couting;*/

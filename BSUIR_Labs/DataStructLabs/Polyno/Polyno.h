@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+///<summary>Singly linked list for polynomials</summary>
 class Polyno
 {
 public:
@@ -45,7 +46,7 @@ public:
 	///<summary>Pushing new item</summary>	
 	void PushBack(Item* pushItem);
 
-	///<summary>Creating and push new item</summary>
+	///<summary>Creating and pushing new item</summary>
 	void PushBack(const double value, const int pow);
 
 	///<summary>Returns meaning value by X argument</summary>
@@ -74,5 +75,6 @@ public:
 
 	friend std::ostream& operator<< (std::ostream &out, const Polyno &polyno);
 
+	///<summary>Default destructor</summary>
 	~Polyno();
 };

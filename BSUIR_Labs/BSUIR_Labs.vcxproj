@@ -130,11 +130,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Polyno\Polyno.cpp" />
+    <ClCompile Include="DataStructLabs\Counting\Counting.cpp" />
+    <ClCompile Include="DataStructLabs\Polyno\Polyno.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Polyno\Polyno.h" />
+    <ClInclude Include="DataStructLabs\Counting\Counting.h" />
+    <ClInclude Include="DataStructLabs\Polyno\Polyno.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="doc\Examples.txt" />
