@@ -91,43 +91,47 @@ struct Sub
 	std::string _surName;
 	std::string _phone;
 
-	static bool STakeByName(const Sub &value, const std::string &surName)
+	static bool CheckBySurname(const Sub &value, const std::string &surName)
 	{
 		return value._surName == surName;
+	}
+
+	static bool CheckByName(const Sub &value, const std::string &name)
+	{
+		return value._name == name;
 	}
 
 	static bool STakeByPhone(const Sub &value, const std::string &phone)
 	{
 		return value._phone == phone;
 	}
-	
+
 	static bool CompareBySurname(const Sub &first, const Sub &second)
 	{
 		return first._surName[0] > second._surName[0];
 	}
 
-	static bool CompareByPhone(const Sub &first, const Sub &second) 
+	static bool CompareByPhone(const Sub &first, const Sub &second)
 	{
 		int firstNumber = std::atoi(first._phone.substr(6, first._phone.length()).c_str());
 		int secondNumber = std::atoi(second._phone.substr(6, second._phone.length()).c_str());
 		return firstNumber > secondNumber;
 	}
-
 };
 
 					/main/
 
 	SingleList<Sub> single = SingleList<Sub>();
-	single.PushBack(Sub {	"Alexey",	"Bern",		"+375296385341" });
-	single.PushBack(Sub {	"Egor",		"Kirich",	"+375175351513" });
-	single.PushBack(Sub	{	"Lera",		"Bubble",	"+375295321251" });
-	single.PushBack(Sub	{	"Adolf",	"Hitler",	"+375179358185" });
-	single.PushBack(Sub	{	"Zack",		"Fallout",	"+375179358185" });
+	single.PushBack(Sub{ "Alexey", "Bern", "+375296385341" });
+	single.PushBack(Sub{ "Egor", "Kirich", "+375175351513" });
+	single.PushBack(Sub{ "Lera", "Bubble", "+375295321251" });
+	single.PushBack(Sub{ "Adolf", "Hitler", "+375179358185" });
+	single.PushBack(Sub{ "Zack", "Fallout", "+375179358185" });
 
 	for (SingleList<Sub>::const_iterator iter = single.Begin(); iter != single.End(); iter = iter->_next)
 		std::cout << iter->_value._name.c_str() << "\t" << iter->_value._phone.c_str() << "\n";
 
-	#pragma region Sort
+#pragma region Sort
 
 	single.SortBy(Sub::CompareBySurname);
 	std::cout << "\nAfter sort:\n\n";
@@ -135,13 +139,13 @@ struct Sub
 	for (SingleList<Sub>::const_iterator iter = single.Begin(); iter != single.End(); iter = iter->_next)
 		std::cout << iter->_value._name.c_str() << "\t" << iter->_value._phone.c_str() << "\n";
 
-	#pragma endregion
+#pragma endregion
 
 	std::cout << "\n";
 
-	#pragma region TakeBy
+#pragma region TakeBy
 
-	SingleList<Sub>* result = new SingleList<Sub>();		
+	SingleList<Sub>* result = new SingleList<Sub>();
 	single.TakeBy<std::string>(result, "+375179358185", Sub::STakeByPhone);
 
 	std::cout << "Take result:\n\n";
@@ -149,4 +153,22 @@ struct Sub
 	for (SingleList<Sub>::const_iterator iter = result->Begin(); iter != result->End(); iter = iter->_next)
 		std::cout << iter->_value._name.c_str() << "\t" << iter->_value._phone.c_str() << "\n";
 
-	#pragma endregion
+#pragma endregion
+
+	std::cout << "\n";
+
+#pragma region Remove
+
+	single.PushBack(Sub{ "Mel", "Gachi", "+375179358185" });
+
+	std::cout << "Before remove:\n";
+
+	std::cout << "Count:" << single.Count() << "\n\n";
+
+	std::cout << "After remove:\n";
+
+	single.Remove(single.Find<std::string>("Mel", Sub::CheckByName));
+
+	std::cout << "Count:" << single.Count() << "\n";
+
+#pragma endregion

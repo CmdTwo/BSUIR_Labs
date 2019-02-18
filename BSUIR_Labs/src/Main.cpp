@@ -9,12 +9,11 @@
 #pragma endregion
 
 
-
 int main()
 {
 	try
-	{
-		
+	{		
+
 	}
 	catch (const std::exception& e)
 	{
