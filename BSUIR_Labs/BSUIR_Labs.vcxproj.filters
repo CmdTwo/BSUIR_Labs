@@ -24,6 +24,9 @@
     <ClCompile Include="DataStructLabs\Counting\Counting.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ProgLang\UnionLabs\UnionLabs.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="doc\Examples.txt" />
@@ -36,6 +39,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="DataStructLabs\SingleList\SingleList.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgLang\UnionLabs\UnionLabs.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

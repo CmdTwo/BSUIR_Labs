@@ -132,12 +132,14 @@
   <ItemGroup>
     <ClCompile Include="DataStructLabs\Counting\Counting.cpp" />
     <ClCompile Include="DataStructLabs\Polyno\Polyno.cpp" />
+    <ClCompile Include="ProgLang\UnionLabs\UnionLabs.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructLabs\Counting\Counting.h" />
     <ClInclude Include="DataStructLabs\Polyno\Polyno.h" />
     <ClInclude Include="DataStructLabs\SingleList\SingleList.h" />
+    <ClInclude Include="ProgLang\UnionLabs\UnionLabs.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="doc\Examples.txt" />
