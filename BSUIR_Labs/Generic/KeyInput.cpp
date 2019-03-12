@@ -2,17 +2,30 @@
 
  KeyInput::Keys KeyInput::GetKeyInput() 
 {
-	unsigned int first = _getche();
-	unsigned int second = _getche();
+	unsigned int first = _getch();
+	unsigned int result;
 
-	unsigned int result = first + second;
+	if (first == 0)
+	{
+		unsigned int second = _getch();
+		result = second;
+	}
+	else
+		result = first;
 
+	
 	switch (result)
 	{
-	case(27):
-		return KeyInput::Esc;
-	case(47):
-		return KeyInput::RightSlash;
+	case(33):
+		return KeyInput::Exclamation; break;
+	case(43):
+		return KeyInput::Plus; break;
+	case(95):
+		return KeyInput::Minus; break;
+	case(59):
+		return KeyInput::F1; break;
+	case(60):
+		return KeyInput::F2; break;
 	default:
 		return KeyInput::NaN;
 	}

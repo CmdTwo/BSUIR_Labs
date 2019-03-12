@@ -10,7 +10,7 @@
 //#include "..\ProgLang\UnionLabs\UnionLabs.h"
 
 #include "..\Algorithms\Lab1.h"
-#include "..\Generic\ParseInput.h"
+#include "..\Algorithms\Lab2.h"
 
 #pragma endregion
 
@@ -18,17 +18,11 @@ int main()
 {
 	try
 	{		
-		Lab1 lab;
+		//Lab1 lab;
+		//lab.BeginInput();
+
+		Lab2 lab;
 		lab.BeginInput();
-		//ParseInput tmp;
-
-		//std::string::size_type outSize;
-		//std::string input = tmp.GetInput();
-
-		//ParseInput::Cmd result;
-		//tmp.ParseToCmd(result, input.begin(), input.end());
-
-		//result._args.Clear();
 	}
 	catch (const std::exception& e)
 	{

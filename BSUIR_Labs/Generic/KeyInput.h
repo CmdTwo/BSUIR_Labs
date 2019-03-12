@@ -7,12 +7,11 @@ public:
 	enum Keys
 	{
 		NaN,
-		RightSlash,
-		E,
-		P,
-		X,
-		N,
-		Esc
+		F1,
+		F2,
+		Plus,
+		Minus,
+		Exclamation
 	};
 
 	static Keys GetKeyInput();
