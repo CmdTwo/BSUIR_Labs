@@ -25,6 +25,7 @@ public:
 	///<summary>Default constructor</summary>
 	SingleList()
 	{
+		_count = 0;
 		_end = new Item;
 		_begin = _end;
 	}
@@ -142,8 +143,8 @@ public:
 		return _count;
 	}
 
-	///<summary>Default destructor</summary>
-	~SingleList()
+	///<summary>Removing all items in list</summary>
+	void Clear()
 	{
 		iterator iter = _begin;
 		iterator deleteIter;
@@ -153,6 +154,13 @@ public:
 			iter = iter->_next;
 			delete deleteIter;
 		}
+		_count = 0;
+	}
+
+	///<summary>Default destructor</summary>
+	~SingleList()
+	{
+		Clear();
 	}
 };
 

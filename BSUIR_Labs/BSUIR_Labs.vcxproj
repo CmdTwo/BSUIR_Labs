@@ -132,6 +132,9 @@
   <ItemGroup>
     <ClCompile Include="DataStructLabs\Counting\Counting.cpp" />
     <ClCompile Include="DataStructLabs\Polyno\Polyno.cpp" />
+    <ClCompile Include="Generic\KeyInput.cpp" />
+    <ClCompile Include="Algorithms\Lab1.cpp" />
+    <ClCompile Include="Generic\ParseInput.cpp" />
     <ClCompile Include="ProgLang\UnionLabs\UnionLabs.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
@@ -139,7 +142,11 @@
     <ClInclude Include="DataStructLabs\Counting\Counting.h" />
     <ClInclude Include="DataStructLabs\Polyno\Polyno.h" />
     <ClInclude Include="DataStructLabs\SingleList\SingleList.h" />
+    <ClInclude Include="Generic\KeyInput.h" />
+    <ClInclude Include="Algorithms\Lab1.h" />
+    <ClInclude Include="Generic\ParseInput.h" />
     <ClInclude Include="ProgLang\UnionLabs\UnionLabs.h" />
+    <ClInclude Include="Generic\SaveInput.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="doc\Examples.txt" />

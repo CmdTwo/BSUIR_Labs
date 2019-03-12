@@ -1,5 +1,5 @@
 #include <iostream>
-#include <time.h>
+#include <numeric>
 
 #pragma region Examples
 
@@ -7,25 +7,32 @@
 //#include "..\DataStructLabs\Counting\Counting.h"
 //#include "..\DataStructLabs\SingleList\SingleList.h"
 
-#include "..\ProgLang\UnionLabs\UnionLabs.h"
+//#include "..\ProgLang\UnionLabs\UnionLabs.h"
+
+#include "..\Algorithms\Lab1.h"
+#include "..\Generic\ParseInput.h"
 
 #pragma endregion
 
-
 int main()
 {
-	std::srand(time(0));
-
 	try
 	{		
-		//UnionLabs::InputLab1();
-		//UnionLabs::InputLab2();
-		//UnionLabs::InputLab3();
+		Lab1 lab;
+		lab.BeginInput();
+		//ParseInput tmp;
+
+		//std::string::size_type outSize;
+		//std::string input = tmp.GetInput();
+
+		//ParseInput::Cmd result;
+		//tmp.ParseToCmd(result, input.begin(), input.end());
+
+		//result._args.Clear();
 	}
 	catch (const std::exception& e)
 	{
 		std::cout << "ERROR: " << e.what() << std::endl;
 	}
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	std::cin.get();
+	//std::cin.get();
 }
