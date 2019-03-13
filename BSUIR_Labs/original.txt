@@ -1,0 +1,5 @@
+Alexey 100 2
+Pasha 200 3
+Lera 500 1
+Ilya 250 5
+Oli 324 2

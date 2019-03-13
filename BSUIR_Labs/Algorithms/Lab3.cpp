@@ -70,7 +70,7 @@ void Lab3::Push(Node* node, const unsigned int &item, const unsigned int lvl)
 
 void Lab3::NLR(Node* node) const
 {
-	std::cout << node->_key << "(" << node->_lvl  + 1 << ") ";
+	std::cout << node->_key << "(" << node->_lvl << ") ";
 
 	if (node->_left != nullptr)
 	{
@@ -106,7 +106,7 @@ unsigned int Lab3::GetNodeOnLvl(Node* node, const unsigned int &lvl, unsigned in
 
 void Lab3::NodesOnLvl(const unsigned int &lvl) const
 {
-	std::cout << "Nodes on " << lvl << ": " << GetNodeOnLvl(_root, lvl, 1);
+	std::cout << "Nodes on " << lvl << ": " << GetNodeOnLvl(_root, lvl, 0);
 }
 
 void Lab3::Print() const

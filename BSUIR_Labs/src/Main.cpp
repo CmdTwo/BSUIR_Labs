@@ -11,8 +11,8 @@
 
 //#include "..\Algorithms\Lab1.h"
 //#include "..\Algorithms\Lab2.h"
-#include "..\Algorithms\Lab3.h"
-//#include "..\Algorithms\Lab2.h"
+//#include "..\Algorithms\Lab3.h"
+#include "..\Algorithms\Lab4.h"
 
 #pragma endregion
 
@@ -42,11 +42,14 @@ int main()
 
 		//std::cout << std::endl;
 
-		//lab.NodesOnLvl(3);
+		//lab.NodesOnLvl(2);
+
+		Lab4 lab;
+		lab.BeginInput();
 	}
 	catch (const std::exception& e)
 	{
 		std::cout << "ERROR: " << e.what() << std::endl;
 	}
-	std::cin.get();
+	//std::cin.get();
 }

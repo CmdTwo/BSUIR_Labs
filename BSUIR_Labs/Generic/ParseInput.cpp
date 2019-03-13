@@ -25,6 +25,25 @@ std::string ParseInput::GetCmd(std::string::const_iterator begin, std::string::c
 	return std::string(cmdBegin, cmdEnd);
 }
 
+void ParseInput::Split(std::string::const_iterator inBegin, std::string::const_iterator inEnd,
+	std::vector<std::string> &container, const char &separator)
+{
+	std::string::const_iterator bFind = inBegin;
+	std::string::const_iterator eFind = bFind;
+	do
+	{
+		bFind = std::find_if_not(bFind, inEnd, [&](const char &c) { return c == ' '; });
+		eFind = std::find_if(bFind, inEnd, [&](const char &c) { return c == ' '; });
+
+		if (bFind != eFind)
+		{
+			container.push_back(std::string(bFind, eFind));
+			bFind = eFind;
+		}		
+
+	}while(eFind != inEnd);
+}
+
 ParseInput::~ParseInput()
 {
 }

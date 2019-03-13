@@ -137,6 +137,7 @@
     <ClCompile Include="Generic\ParseInput.cpp" />
     <ClCompile Include="Algorithms\Lab2.cpp" />
     <ClCompile Include="Algorithms\Lab3.cpp" />
+    <ClCompile Include="Algorithms\Lab4.cpp" />
     <ClCompile Include="ProgLang\UnionLabs\UnionLabs.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="Generic\ParseInput.h" />
     <ClInclude Include="Algorithms\Lab2.h" />
     <ClInclude Include="Algorithms\Lab3.h" />
+    <ClInclude Include="Algorithms\Lab4.h" />
     <ClInclude Include="ProgLang\UnionLabs\UnionLabs.h" />
     <ClInclude Include="Generic\SaveInput.h" />
   </ItemGroup>
