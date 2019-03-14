@@ -145,6 +145,7 @@
     <ClInclude Include="DataStructLabs\Counting\Counting.h" />
     <ClInclude Include="DataStructLabs\Polyno\Polyno.h" />
     <ClInclude Include="DataStructLabs\SingleList\SingleList.h" />
+    <ClInclude Include="DataStructLabs\DoubleList\DoubleList.h" />
     <ClInclude Include="Generic\KeyInput.h" />
     <ClInclude Include="Algorithms\Lab1.h" />
     <ClInclude Include="Generic\ParseInput.h" />

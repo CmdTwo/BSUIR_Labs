@@ -83,5 +83,8 @@
     <ClInclude Include="Algorithms\Lab4.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="DataStructLabs\DoubleList\DoubleList.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
