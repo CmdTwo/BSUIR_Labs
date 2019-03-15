@@ -172,3 +172,62 @@ struct Sub
 	std::cout << "Count:" << single.Count() << "\n";
 
 #pragma endregion
+
+/////////
++++DoubleList Example
+/////////
+
+struct Phone
+{
+	std::string _phone;
+
+	static bool CompareByMaxPhoneLenght(const Phone &value, const std::string::size_type &lenght)
+	{
+		return value._phone.size() > lenght;
+	}
+
+	static bool CompareByPhone(const Phone &first, const Phone &second)
+	{
+		int firstNumber = std::atoi(first._phone.c_str());
+		int secondNumber = std::atoi(second._phone.c_str());
+
+		return firstNumber > secondNumber;
+	}
+};
+
+
+	/main/
+
+		DoubleList<Phone> doubleList = DoubleList<Phone>();
+		doubleList.PushBack(Phone{ "3463724" });
+		doubleList.PushBack(Phone{ "102" });
+		doubleList.PushBack(Phone{ "3467637" });
+		doubleList.PushBack(Phone{ "103" });
+		doubleList.PushBack(Phone{ "104" });
+		doubleList.PushBack(Phone{ "5412566" });
+		doubleList.PushBack(Phone{ "6136376" });
+		doubleList.PushBack(Phone{ "101" });
+
+		//for (DoubleList<Phone>::const_iterator iter = doubleList.rBegin(); iter != doubleList.rEnd(); iter = iter->_prev)
+		//		std::cout << iter->_value._phone.c_str() << "\n";
+
+		//std::cout << "\n";
+
+		for (DoubleList<Phone>::const_iterator iter = doubleList.Begin(); iter != doubleList.End(); iter = iter->_next)
+			std::cout << iter->_value._phone.c_str() << "\n";
+		
+		SingleList<Phone> singeList = SingleList<Phone>();
+
+		std::cout << "\n";
+
+		doubleList.rSelectTo<std::string::size_type>(singeList, 3, Phone::CompareByMaxPhoneLenght);
+
+		for (SingleList<Phone>::const_iterator iter = singeList.Begin(); iter != singeList.End(); iter = iter->_next)
+			std::cout << iter->_value._phone.c_str() << "\n";
+
+		//std::cout << "\n";
+
+		//singeList.SortBy(Phone::CompareByPhone);
+
+		//	for (SingleList<Phone>::const_iterator iter = singeList.Begin(); iter != singeList.End(); iter = iter->_next)
+		//		std::cout << iter->_value._phone.c_str() << "\n";
