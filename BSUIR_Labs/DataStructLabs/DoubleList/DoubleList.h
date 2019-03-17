@@ -50,10 +50,6 @@ public:
 			pushItem->_prev = _end->_prev;
 			pushItem->_next = _end;
 			_end->_prev = pushItem;
-			//(*_end) = (*pushItem);
-			//_end->_next = new Item;
-			//_end->_prev = _end;
-			//_end = _end->_next;
 		}
 		_count++;
 	}

@@ -1,26 +1,29 @@
 #include <iostream>
-//#include <numeric>
 
-#pragma region Examples
+#pragma region Labs
 
-//#include "..\DataStructLabs\Polyno\Polyno.h"
-//#include "..\DataStructLabs\Counting\Counting.h"
-//#include "..\DataStructLabs\SingleList\SingleList.h"
-//#include "..\DataStructLabs\DoubleList\DoubleList.h"
-
-//#include "..\ProgLang\UnionLabs\UnionLabs.h"
+//#include "..\DataStructLabs\HashTable\HashTable.h"
 
 #pragma endregion
+
 
 int main()
 {
 	try
-	{	
+	{
+		//HashTable<int> tmp = HashTable<int>();
 
+		//tmp.Insert("ff3f", 2);
+
+		//std::cout << tmp.Get("ff3f") << "\n";
+
+		//tmp.Remove("ff3f");
+
+		//std::cout << tmp.Get("ff3f") << "\n";
 	}
 	catch (const std::exception& e)
 	{
-		std::cout << "ERROR: " << e.what() << std::endl;
+		std::cout << e.what();
 	}
 	std::cin.get();
 }

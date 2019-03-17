@@ -231,3 +231,19 @@ struct Phone
 
 		//	for (SingleList<Phone>::const_iterator iter = singeList.Begin(); iter != singeList.End(); iter = iter->_next)
 		//		std::cout << iter->_value._phone.c_str() << "\n";
+
+/////////
++++HashTable Example
+/////////
+
+		/main/
+
+		HashTable<int> tmp = HashTable<int>();
+
+		tmp.Insert("ff3f", 2);
+
+		std::cout << tmp.Get("ff3f") << "\n";
+
+		tmp.Remove("ff3f");
+
+		std::cout << tmp.Get("ff3f") << "\n";

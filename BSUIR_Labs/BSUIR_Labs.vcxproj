@@ -152,6 +152,7 @@
     <ClInclude Include="Algorithms\Lab2.h" />
     <ClInclude Include="Algorithms\Lab3.h" />
     <ClInclude Include="Algorithms\Lab4.h" />
+    <ClInclude Include="DataStructLabs\HashTable\HashTable.h" />
     <ClInclude Include="ProgLang\UnionLabs\UnionLabs.h" />
     <ClInclude Include="Generic\SaveInput.h" />
   </ItemGroup>
