@@ -91,13 +91,6 @@ public:
 			_begin = pushItem;
 			_begin->_next = _end;
 		}
-		//else if (_count == 1)
-		//{
-		//	_end->_prev->_next = pushItem;
-		//	pushItem->_prev = _end->_prev;
-		//	pushItem->_next = _end;
-		//	_end->_prev = pushItem;
-		//}
 		else
 		{
 			Insert(pushItem);
