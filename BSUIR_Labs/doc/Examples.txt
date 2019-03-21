@@ -238,12 +238,46 @@ struct Phone
 
 		/main/
 
-		HashTable<int> tmp = HashTable<int>();
+		HashTable<std::string> hashTable = HashTable<std::string>();
 
-		tmp.Insert("ff3f", 2);
+		std::cout << "Inout any Key: ";
+		std::string key;
+		std::cin >> key;		
 
-		std::cout << tmp.Get("ff3f") << "\n";
+		std::cout << "Input any Value: ";
+		std::string value;
+		std::cin >> value;
 
-		tmp.Remove("ff3f");
+		hashTable.Insert(key, value);
+		std::cout << "\nValue has been inserted;\n";
 
-		std::cout << tmp.Get("ff3f") << "\n";
+		std::cout << "\nTry to get Value by Key...\n";
+		std::cout << "Result: " << hashTable.Get(key) << "\n";
+
+		std::cout << "\nTry to remove by Key...\n";
+		hashTable.Remove(key);
+		std::cout << "Value has been removed;\n";
+
+/////////
++++PriorityQueue Example
+/////////
+
+		PriorityQueue<int> queue = PriorityQueue<int>();
+
+		queue.PushBack(1, 20);
+		queue.PushBack(3, 90);
+		queue.PushBack(4, 1);
+		queue.PushBack(1512, 2);
+		queue.PushBack(2, 30);
+		queue.PushBack(2, 100);
+
+		std::cout << "Debug print:\n\n";
+		queue.DebugPrint();
+
+		std::cout << "\n\nTry to find...\n";
+		PriorityQueue<int>::const_iterator iter = queue.Find((float)90);
+		std::cout << "Result: " << iter->_value << "(" << iter->_priority << ")\n";
+
+		std::cout << "\nTry to remove...\n";
+		queue.Remove(2);
+		std::cout << "Result: complete";

@@ -89,5 +89,8 @@
     <ClInclude Include="DataStructLabs\HashTable\HashTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="DataStructLabs\PriorityQueue\PriorityQueue.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
