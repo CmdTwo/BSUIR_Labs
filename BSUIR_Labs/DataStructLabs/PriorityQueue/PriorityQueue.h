@@ -69,7 +69,7 @@ public:
 	}
 
 	///<summary>TEMP: Debug print</summary>
-	void DebugPrint()
+	void DebugPrint() const
 	{
 		const_iterator iter = _begin;
 		while (iter != _end)
@@ -116,6 +116,7 @@ public:
 					prev->_next = iter->_next;
 				}
 				delete iter;
+				_count--;
 				return;
 			}
 			prev = iter;
@@ -142,6 +143,7 @@ public:
 					prev->_next = iter->_next;
 				}
 				delete iter;
+				_count--;
 				return;
 			}
 			prev = iter;
@@ -151,7 +153,7 @@ public:
 	}
 
 	///<summary>Returns first equal item by value</summary>
-	const_iterator Find(const value_type &value)
+	const_iterator Find(const value_type &value) const
 	{
 		const_iterator iter = _begin;
 		do
@@ -165,7 +167,7 @@ public:
 	}
 
 	///<summary>Returns first equal item by priority</summary>
-	const_iterator Find(const float &priority)
+	const_iterator Find(const float &priority) const
 	{
 		const_iterator iter = _begin;
 		do
@@ -176,5 +178,31 @@ public:
 			iter = iter->_next;
 		} while (iter != _end);
 		throw std::exception("Cannot find item by priority");
+	}
+
+	///<summary>Returns first item</summary>
+	const_iterator Top() const
+	{
+		return _begin;
+	}
+
+	///<summary>Removing all items in queue</summary>
+	void Clear()
+	{
+		iterator iter = _begin;
+		iterator deleteIter;
+		while (iter != _end)
+		{
+			deleteIter = iter;
+			iter = iter->_next;
+			delete deleteIter;
+		}
+		_count = 0;
+	}
+
+	///<summary>Default destructor</summary>
+	~PriorityQueue()
+	{
+		Clear();
 	}
 };
