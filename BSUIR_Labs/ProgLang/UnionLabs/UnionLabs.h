@@ -1,10 +1,22 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
 
 class UnionLabs
 {
+public:
+	struct Enrollee
+	{
+		std::string _surName;
+		std::string _country;
+		std::string _city;
+		float _avgCertifMark;
+	};
+
+
 private:
+
 	template<class T>
 	static void SaveInput(T& value)
 	{
@@ -25,8 +37,13 @@ private:
 
 	static bool Lab3_DoJob(const std::string &str, const std::string &pattern);
 
+	static void Lab4_DoJob(const std::vector<Enrollee> &vec);
+	static void Lab4_Display(const std::vector<Enrollee>::const_iterator begin, 
+		std::vector<Enrollee>::const_iterator end);
+
 public:
 	static void InputLab1();
 	static void InputLab2();
 	static void InputLab3();
+	static void InputLab4();
 };
