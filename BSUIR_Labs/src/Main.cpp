@@ -5,8 +5,6 @@
 
 #pragma region Labs
 
-//#include "..\DataStructLabs\HashTable\HashTable.h"
-//#include "..\DataStructLabs\PriorityQueue\PriorityQueue.h"
 #include "..\ProgLang\UnionLabs\UnionLabs.h"
 #pragma endregion
 
@@ -15,8 +13,7 @@ int main()
 {
 	try
 	{
-		//UnionLabs::InputLab4();
-		//UnionLabs::InputLab5();
+
 	}
 	catch (const std::exception& e)
 	{

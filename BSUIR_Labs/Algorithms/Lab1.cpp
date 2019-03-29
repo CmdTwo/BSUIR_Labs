@@ -100,7 +100,7 @@ void Lab1::AddStudent()
 		newStudent._examMarks.push_back(mark);
 	}
 
-	std::cout << "Input " << iter->second._marksCount << " marks: ";
+	std::cout << "Input " << MAX_MARSK << " marks: ";
 	for (unsigned int i = 0; i != MAX_MARSK; i++)
 	{
 		SaveInput::Input(mark);
