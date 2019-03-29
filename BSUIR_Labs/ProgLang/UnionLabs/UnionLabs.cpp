@@ -1,6 +1,8 @@
 #include "UnionLabs.h"
 #include <numeric>
 #include <algorithm>
+#include <fstream>
+#include <cctype>
 
 std::string UnionLabs::ResutlOfLab1(const int &value_1, const int &value_2)
 {
@@ -59,11 +61,25 @@ void UnionLabs::Lab4_DoJob(const std::vector<Enrollee> &vec)
 	std::sort(selectVect.begin(), selectVect.end(), 
 		[](const Enrollee &x, const Enrollee &y) { return x._surName < y._surName; });
 	
-	std::cout << "All unselected vector:\n\n";
+	std::cout << "\nAll unselected vector:\n\n";
 	Lab4_Display(vec.begin(), vec.end());
 
 	std::cout << "\nAverage mark: " << avg << "\n\nSelected and sorted vector:\n\n";
 	Lab4_Display(selectVect.begin(), selectVect.end());
+
+	std::ofstream file("Lab4File.txt");
+
+	if (file.is_open())
+	{
+		file << "\nAverage mark: " << avg << "\n\nSelected and sorted vector:\n\n";
+		for (std::vector<Enrollee>::const_iterator iter = selectVect.begin(); iter != selectVect.end(); iter++)
+		{
+			file << " " << iter->_surName << " (" << iter->_country << ", " << iter->_city
+				<< ") " << iter->_avgCertifMark << "\n";
+		}
+	}
+
+	file.close();
 }
 
 void UnionLabs::Lab4_Display(const std::vector<Enrollee>::const_iterator begin,
@@ -74,6 +90,40 @@ void UnionLabs::Lab4_Display(const std::vector<Enrollee>::const_iterator begin,
 		std::cout << " " << iter->_surName << " (" << iter->_country << ", " << iter->_city
 			<< ") " << iter->_avgCertifMark << "\n";
 	}
+}
+
+void UnionLabs::Lab5_DoJob(std::string first, std::string second)
+{
+	std::ifstream readFile(first);
+	std::ofstream writeFile(second);
+
+	if (readFile.is_open() && writeFile.is_open())
+	{
+		std::string buffer;
+		while (std::getline(readFile, buffer))
+		{	
+			std::string::const_iterator iter = std::find_if(buffer.begin(), buffer.end(),
+				[](const char &c) { return std::isdigit(c); });
+
+			if (iter == buffer.end())
+			{
+				writeFile << buffer << std::endl;
+			}
+		}
+
+		readFile.close();
+		writeFile.close();
+	}
+	else if(!readFile.is_open())
+	{
+		throw std::exception("Invalid read file name/path!");
+	}
+	else
+	{
+		throw std::exception("Invalid write file name/path!");
+	}
+
+	std::cout << "Complete!";
 }
 
 void UnionLabs::InputLab1()
@@ -130,32 +180,50 @@ void UnionLabs::InputLab3()
 	std::cout << "\nResult: " << (Lab3_DoJob(inputStr, pattern) ? "True" : "False");
 }
 
- void UnionLabs::InputLab4()
+void UnionLabs::InputLab4()
 {
 	 std::vector<Enrollee> enrolleeVec;
 
-	 enrolleeVec.push_back(Enrollee{ "Bernikovich", "Belarus", "Minsk", 10 });
-	 enrolleeVec.push_back(Enrollee{ "Poshar", "Belarus", "Minsk", 3 });
-	 enrolleeVec.push_back(Enrollee{ "Marg", "Belarus", "Minsk", 5 });
-	 enrolleeVec.push_back(Enrollee{ "Alyn", "Belarus", "Minsk", 9 });
+	 //enrolleeVec.push_back(Enrollee{ "Bernikovich", "Belarus", "Minsk", 10 });
+	 //enrolleeVec.push_back(Enrollee{ "Poshar", "Belarus", "Minsk", 3 });
+	 //enrolleeVec.push_back(Enrollee{ "Marg", "Belarus", "Minsk", 5 });
+	 //enrolleeVec.push_back(Enrollee{ "Alyn", "Belarus", "Minsk", 9 });
 
-	 //std::cout << "\n\tLab 4\nInput count: ";
-	 //size_t count;
-	 //SaveInput(count);
+	 std::cout << "\n\tLab 4\nInput count: ";
+	 size_t count;
+	 SaveInput(count);
 
-	 //for (size_t i = 0; i != count; i++)
-	 //{
-		// Enrollee newItem;
-		// float avg;
+	 std::cout << "\n(Surname Country City Mark)\n\n";
 
-		// std::cout << "[" << (i + 1) << "]: ";
-		// std::cin >> newItem._surName >> newItem._country >> newItem._city;
-		// SaveInput(avg);
+	 for (size_t i = 0; i != count; i++)
+	 {
+		 Enrollee newItem;
+		 float avg;
 
-		// newItem._avgCertifMark = avg;
-	 //}
+		 std::cout << "[" << (i + 1) << "]: ";
+		 std::cin >> newItem._surName >> newItem._country >> newItem._city;
+		 SaveInput(avg);
+
+		 newItem._avgCertifMark = avg;
+
+		 enrolleeVec.push_back(newItem);
+	 }
 
 	 Lab4_DoJob(enrolleeVec);
 
 
+}
+
+void UnionLabs::InputLab5()
+{
+	//std::string openFile;
+	//std::cout << "Input first file name: ";
+	//std::cin >> openFile;
+
+	//std::string outFile;
+	//std::cout << "Input second file name: ";
+	//std::cin >> outFile;
+
+	//Lab5_DoJob(openFile, outFile);
+	Lab5_DoJob("Lab5_1.txt", "Lab5_2.txt");
 }

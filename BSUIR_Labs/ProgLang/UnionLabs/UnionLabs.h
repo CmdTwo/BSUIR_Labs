@@ -41,9 +41,12 @@ private:
 	static void Lab4_Display(const std::vector<Enrollee>::const_iterator begin, 
 		std::vector<Enrollee>::const_iterator end);
 
+	static void Lab5_DoJob(std::string firstFile, std::string secondFile);
+
 public:
 	static void InputLab1();
 	static void InputLab2();
 	static void InputLab3();
 	static void InputLab4();
+	static void InputLab5();
 };

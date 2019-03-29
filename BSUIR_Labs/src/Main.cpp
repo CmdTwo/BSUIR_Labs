@@ -1,5 +1,5 @@
-#include <iostream>
-#include <string>
+//#include <iostream>
+//#include <string>
 #include "..\Generic\SaveInput.h"
 
 
@@ -16,6 +16,7 @@ int main()
 	try
 	{
 		//UnionLabs::InputLab4();
+		//UnionLabs::InputLab5();
 	}
 	catch (const std::exception& e)
 	{
